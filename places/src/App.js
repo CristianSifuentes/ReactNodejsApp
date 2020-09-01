@@ -1,41 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton'
+// import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title';
 import { hola } from './components/Title';
 
 class App extends Component {
   
-  constructor(props){
-    super(props);
-
-    this.state = {
-      numero: 0
-    };
-
-    // 
-    
-    this.updateNumero = this.updateNumero.bind(this);
-
-  }
-
-  updateNumero() {
-    this.setState({
-      numero: this.state.numero + 1
-    });
-
-  }
-
-
   render() {
   return (
-    <section>
-      <div>
-        <div>
+    <MuiThemeProvider>
+      <div className="Header-background"> 
+        <div style={{ "width": "80%", "margin": "o auto" }}>
           <Title></Title>
-          <h2>{this.state.numero}</h2>
-          <button onClick={ this.updateNumero }>Crear cuenta gratuita</button>
-          <img src={process.env.PUBLIC_URL + '/images/top-background.jpg'} height="300"/>
+          <div className="Header-main">
+            <RaisedButton label="Crear cuenta gratuita" secondary={true}></RaisedButton>
+            <img className="Header-ilustration"  src={process.env.PUBLIC_URL + '/images/top-background.jpg'} height="300"/>
+          </div>
           <div>
              <ul>
                <li>
@@ -54,7 +36,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-    </section>
+    </MuiThemeProvider>
   );
   }
 }
