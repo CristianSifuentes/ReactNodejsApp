@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Home from './pages/Home'
+import Home from './pages/Home';
 
 class App extends Component {
   
@@ -13,11 +13,9 @@ class App extends Component {
   render() {
   return (
     <MuiThemeProvider>
-      <section>
         <Home></Home>
-      </section>
     </MuiThemeProvider>
-  );
+   );
   }
 }
 

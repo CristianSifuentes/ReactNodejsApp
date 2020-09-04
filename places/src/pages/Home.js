@@ -1,31 +1,21 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Card, CardText, CardMedia, CardTitle } from 'material-ui/Card'
-import { indigo400, redA400, lightBlueA400, amberA400 }  from  'material-ui/styles/colors';
+import { indigo400 }  from  'material-ui/styles/colors';
 import Title from '../components/Title';
 
 import data from '../request/places';
-
+import Benefit from '../components/Benefit';
+import PlaceCard from '../components/places/PlaceCard'
 export default class Home extends React.Component {
     
     
-  places() {
-    return data.places.map((places, index) => {
-      return (
-        <div className="col-xs-12 col-sm-4" key={index}>
-       <Card>
-          <CardMedia>
-            <img src={process.env.PUBLIC_URL + places.imagenUrl}/>
-          </CardMedia>
-          <CardTitle title={places.title}>
-
-          </CardTitle>
-          <CardText>{places.descripcion}</CardText>
-      </Card>
-        </div>
-      )
-    }) 
-  }
+   places() {
+     return data.places.map((places, index) => {
+       return (
+        <PlaceCard places={places} index={index}></PlaceCard>
+       )
+     }) 
+   }
     
     
     render() {
@@ -39,63 +29,7 @@ export default class Home extends React.Component {
                 <img className="Header-ilustration"  src={process.env.PUBLIC_URL + '/images/top-background.png'} height="300"/>
               </div> 
               <div>
-    
-              <ul>
-    
-                  <Card className="Header-Benefit">
-                    
-                    <CardText>
-                      <div className="row">
-                        <div className="Header-Benefit-image" style={{ "background-color" : redA400 }}>
-                            <img src={process.env.PUBLIC_URL + '/images/heart.png'}/>
-                        </div>
-                        <div className="Header-Benefit-content">
-                            <h3>Calificaciones con emiciones</h3>
-                            <p>Califica tus lugares con experiencias, no con números</p>
-                        </div>
-                      </div>
-    
-                    </CardText>
-                  </Card>
-    
-    
-                  <Card className="Header-Benefit">
-                    
-                    <CardText>
-                      <div className="row">
-                        <div className="Header-Benefit-image" style={{ "background-color" : lightBlueA400 }}>
-                            <img src={process.env.PUBLIC_URL + '/images/heart.png'}/>
-                        </div>
-                        <div className="Header-Benefit-content">
-                          <h3>¿Sin internet? Sin problemas</h3>
-                          <p>Places funciona sin internet o en conexiones lentas</p>
-                        </div>
-                      </div>
-    
-                    </CardText>
-                 
-                   </Card>
-    
-    
-                  <Card className="Header-Benefit">
-                    
-                    <CardText>
-                      <div className="row">
-                        <div className="Header-Benefit-image" style={{ "background-color" : amberA400 }}>
-                            <img src={process.env.PUBLIC_URL + '/images/heart.png'}/>
-                        </div>
-                        <div className="Header-Benefit-content">
-                           <h3>¿Sin internet? Sin problemas</h3>
-                           <p>Places funciona sin internet o en conexiones lentas</p>
-                        </div>
-                      </div>
-    
-                    </CardText>
-                  
-                  </Card>
-    
-              </ul>
-                
+                  <Benefit></Benefit>
               </div>        
             </div>
           </div>
