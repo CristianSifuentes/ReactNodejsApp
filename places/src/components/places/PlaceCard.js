@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardText, CardMedia, CardTitle } from 'material-ui/Card'
+import { Card, CardText, CardMedia, CardTitle, CardActions } from 'material-ui/Card'
+import FlatButton from 'material-ui/FlatButton';
 
 export default class PaceCard extends React.Component {
     render (){
@@ -13,6 +14,14 @@ export default class PaceCard extends React.Component {
 
                     </CardTitle>
                     <CardText>{this.props.places.descripcion}</CardText>
+                    <CardActions style={{'textAlign': 'right'}}>
+                        <FlatButton secondary={true} label="Ver mas">
+                        </FlatButton>
+                        <FlatButton secondary={true} label="Ocultar" onClick={
+                            ()=> this.props.onRemove(this.props.places)
+                        }>
+                       </FlatButton>
+                    </CardActions>
                     </Card>
                     </div>
         )

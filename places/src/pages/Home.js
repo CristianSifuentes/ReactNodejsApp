@@ -8,11 +8,26 @@ import Benefit from '../components/Benefit';
 import PlaceCard from '../components/places/PlaceCard'
 export default class Home extends React.Component {
     
+  constructor(props){
+    super(props);
+       
+    this.state = {
+      places: data.places
+    }
+
+    this.hidePlace = this.hidePlace.bind(this);
+  }
+
+  hidePlace(place){
+    this.setState({
+      places: this.state.places.filter(el => el != place)
+    })
+  }
     
    places() {
      return data.places.map((places, index) => {
        return (
-        <PlaceCard places={places} index={index}></PlaceCard>
+        <PlaceCard onRemove={this.hidePlace} places={places} index={index}></PlaceCard>
        )
      }) 
    }
