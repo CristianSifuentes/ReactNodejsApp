@@ -18,7 +18,7 @@ export default class PaceCard extends React.Component {
                         <FlatButton secondary={true} label="Ver mas">
                         </FlatButton>
                         <FlatButton secondary={true} label="Ocultar" onClick={
-                            ()=> this.props.onRemove(this.props.places)
+                            ()=> this.props.onRemove(this.props.places )
                         }>
                        </FlatButton>
                     </CardActions>
