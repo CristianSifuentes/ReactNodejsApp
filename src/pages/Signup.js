@@ -2,10 +2,11 @@ import React from 'react';
 import Title from '../components/Title';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Link } from 'react-router-dom';
 import Container from '../components/Container';
+import { Link } from 'react-router-dom';
 
-export default class Login extends React.Component{
+
+export default class Signup extends React.Component{
     render(){
         return(
             <div className="row middle-xs">
@@ -16,8 +17,9 @@ export default class Login extends React.Component{
                         <TextField floatingLabelText="Correo electrónico" type="email" className="textfield"></TextField>
                         <TextField floatingLabelText="Constraeña" type="password" className="textfield"></TextField>
                             <div className="Login-actions">
-                                <Link to="/signup" style={{  marginRight: "1em"  }}>Crear nueva cuenta</Link>
-                                <RaisedButton label="Ingresar" secondary={true} ></RaisedButton>
+                            <Link to="/login" style={{  marginRight: "1em"  }}>Ya tengo cuenta</Link>
+
+                                <RaisedButton label="Crear cuenta" secondary={true} ></RaisedButton>
                             </div>
                        </div>
                        

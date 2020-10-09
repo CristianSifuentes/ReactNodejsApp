@@ -8,7 +8,7 @@ export default class PaceCard extends React.Component {
                 <div className="col-xs-12 col-sm-4" key={this.props.index}>
                 <Card>
                     <CardMedia>
-                        <img src={process.env.PUBLIC_URL + this.props.places.imagenUrl}/>
+                        <img src={process.env.PUBLIC_URL + this.props.places.imagenUrl} alt={this.props.index}/>
                     </CardMedia>
                     <CardTitle title={this.props.places.title}>
 
