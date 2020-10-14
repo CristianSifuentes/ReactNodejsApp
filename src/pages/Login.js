@@ -27,7 +27,7 @@ export default class Login extends React.Component{
                 <div className="col-xs-12 col-sm-6">
                     <div className="Login-background" 
                     style={{ 'backgroundImage': 
-                    "url(" + process.env.PUBLIC_URL + '/images/top-background.png'+ ")" }}>
+                    "url(" + process.env.PUBLIC_URL + "/images/top-background.png"+ ")" }}>
 
                     
                     </div>

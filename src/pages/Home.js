@@ -20,7 +20,7 @@ export default class Home extends React.Component {
 
   hidePlace(place){
     this.setState({
-      places: this.state.places.filter(el => el != place)
+      places: this.state.places.filter(el => el !== place)
     })
   }
     

@@ -17,7 +17,9 @@ class App extends Component {
   return (
     <MuiThemeProvider>
       <MyAppBar></MyAppBar>
-     {this.props.children}
+     {
+      this.props.children
+     }
     </MuiThemeProvider>
    );
   }

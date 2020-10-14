@@ -12,7 +12,7 @@ export default class Benefit extends React.Component {
               <CardText>
                 <div className="row">
                   <div className="Header-Benefit-image" style={{ "background-color" : redA400 }}>
-                      <img src={process.env.PUBLIC_URL + '/images/heart.png'}/>
+                      <img src={process.env.PUBLIC_URL + '/images/heart.png'} alt='img'/>
                   </div>
                   <div className="Header-Benefit-content">
                       <h3>Calificaciones con emiciones</h3>

@@ -6,9 +6,9 @@ export default class PlaceHorizontal extends React.Component{
     render(){
     return (
     <Card style={{ 'marginTop':'1em', 'overflow': 'hidden' }}>
-         <div className="row">
+        <div className="row">
             <div className="PlaceH-avatar">
-                <img src={ this.props.place.imagenUrl }></img>
+                <img src={ this.props.place.imagenUrl } alt="img"/>
             </div>
             <div className="col-xs" style={{ 'textAlign': 'left' }}>
                 <CardHeader title={this.props.place.title} 
@@ -30,7 +30,7 @@ export default class PlaceHorizontal extends React.Component{
                 </div>
 
             </div>
-            </div>
+        </div>
     </Card>
     );
     }
