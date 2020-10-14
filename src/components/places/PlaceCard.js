@@ -1,12 +1,32 @@
 import React from 'react';
 import { Card, CardText, CardMedia, CardTitle, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton';
+import { CSSTransition } from 'react-transition-group';
 
 export default class PaceCard extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            show: true
+        }
+
+        setInterval(() => this.setState({ show:!this.state.show }), 1000);
+    }
+    
     render (){
         return (
-                <div className="col-xs-12 col-sm-4" key={this.props.index}>
-                <Card>
+                <CSSTransition 
+                    appear={true}
+                    unmountOnExit={true}
+                    mountOnEnter={true}
+                    classNames="alert"
+                    in={this.state.show}
+
+
+                >
+                                    <div className="col-xs-12 col-sm-4" key={this.props.index}>
+                     <Card>
                     <CardMedia>
                         <img src={process.env.PUBLIC_URL + this.props.places.imagenUrl} alt={this.props.index}/>
                     </CardMedia>
@@ -23,7 +43,9 @@ export default class PaceCard extends React.Component {
                        </FlatButton>
                     </CardActions>
                     </Card>
-                    </div>
+                </div>
+                </CSSTransition>
+
         )
     }
 }
