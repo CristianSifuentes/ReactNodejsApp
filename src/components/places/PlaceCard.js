@@ -17,11 +17,11 @@ export default class PaceCard extends React.Component {
     render (){
         return (
                 <CSSTransition 
-                    appear={true}
-                    unmountOnExit={true}
-                    mountOnEnter={true}
+                    // appear={true}
+                    // unmountOnExit={true}
+                    // mountOnEnter={true}
                     classNames="alert"
-                    in={this.state.show}
+                    in={this.props.in}
 
 
                 >

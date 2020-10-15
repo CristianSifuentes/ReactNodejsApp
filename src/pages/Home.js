@@ -5,7 +5,10 @@ import Title from '../components/Title';
 import Container from '../components/Container';
 import data from '../request/places';
 import Benefit from '../components/Benefit';
-import PlaceCard from '../components/places/PlaceCard'
+import PlaceCard from '../components/places/PlaceCard';
+import { Link } from 'react-router-dom';
+import { TransitionGroup } from 'react-transition-group';
+
 export default class Home extends React.Component {
     
   constructor(props){
@@ -41,6 +44,7 @@ export default class Home extends React.Component {
             <Container>
               <div className="Header-main">
                  <Title></Title>
+                 <Link to="/signup"></Link>
                  <RaisedButton label="Crear cuenta gratuita" secondary={true}></RaisedButton>
                  <img className="Header-ilustration"  src={process.env.PUBLIC_URL + '/images/top-background.png'} height="300"/>
               </div> 
@@ -56,9 +60,9 @@ export default class Home extends React.Component {
           </div>
              <div  style={{ "background-color": indigo400, "padding": "50px", "color":"white"  }}>
                  <h3 style={{ 'fontSize':'24px' }}>Sitios populares</h3>
-                 <div className="row">
+                 <TransitionGroup className="row">
                     {this.places()}
-                 </div>
+                 </TransitionGroup>
           </div>
           </section>
 
